@@ -1,0 +1,7 @@
+venv/
+__pycache__/
+*.pyc
+.env
+backend/database/chroma_db/
+backend/database/ocr_cache/
+frontend/chat_history.json
