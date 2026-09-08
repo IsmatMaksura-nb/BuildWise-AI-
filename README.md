@@ -418,7 +418,7 @@ Groq         RAG / OCR      Groq Vision    Cost Tool
 7. Cost-related requests use the **Cost Calculator Tool**.
 8. Market-related requests use the **Search Agent and Tavily**.
 9. The system generates the final response.
-10. The response is displayed to the user through the Streamlit frontend.
+10. The response is displayed to the user through the **Streamlit frontend**.
 
 ---
 
@@ -604,6 +604,7 @@ Create a `.env` file in the project root.
 
 Example:
 
+```env
 GROQ_API_KEY=your_groq_api_key
 TAVILY_API_KEY=your_tavily_api_key
 
@@ -611,16 +612,18 @@ LANGSMITH_API_KEY=your_langsmith_api_key
 LANGSMITH_TRACING=true
 LANGSMITH_ENDPOINT=https://api.smith.langchain.com
 LANGSMITH_PROJECT=BuildWise-AI
+```
 
 ### Environment Variable Description
 
-| Variable               | Purpose                                   |
-| ---------------------- | ----------------------------------------- |
-| `GROQ_API_KEY`         | Access to Groq language and vision models |
-| `TAVILY_API_KEY`       | Access to web search                      |
-| `LANGCHAIN_API_KEY`    | LangSmith authentication                  |
-| `LANGCHAIN_TRACING_V2` | Enables LangSmith tracing                 |
-| `LANGCHAIN_PROJECT`    | LangSmith project name                    |
+| Variable             | Purpose                                   |
+| -------------------- | ----------------------------------------- |
+| `GROQ_API_KEY`       | Access to Groq language and vision models |
+| `TAVILY_API_KEY`     | Access to web search                      |
+| `LANGSMITH_API_KEY`  | LangSmith authentication                  |
+| `LANGSMITH_TRACING`  | Enables LangSmith tracing                 |
+| `LANGSMITH_ENDPOINT` | LangSmith API endpoint                    |
+| `LANGSMITH_PROJECT`  | LangSmith project name                    |
 
 ### 🔒 Security
 
@@ -717,7 +720,7 @@ Suggested screenshots:
 
 **Developed by Ismat Maksura**
 
-**BuildWise-AI — Final Year Project**
+**BuildWise-AI — Final Project**
 
 ---
 
