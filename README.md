@@ -8,7 +8,7 @@ The system combines a **multi-agent architecture, Retrieval-Augmented Generation
 
 # ✨ Features
 
-## 📄 1. Document & Blueprint Analyzer
+## 📄 1. Document Analyzer
 
 The Document Analyzer helps users work with construction-related documents such as floor plans, drawings, and PDF files.
 
@@ -36,7 +36,7 @@ Uploaded Document
  Document Processing
        │
        ▼
-    Text Chunks
+   Text Chunks
        │
        ▼
      ChromaDB
@@ -45,7 +45,7 @@ Uploaded Document
 Semantic Retrieval
        │
        ▼
-   Document Agent
+  Document Agent
        │
        ▼
   Grounded Answer
@@ -53,7 +53,7 @@ Semantic Retrieval
 
 ---
 
-## 🖼️ 2. Visual Building Inspector
+## 🖼️ 2. Visual Inspector
 
 The Visual Inspector allows users to upload construction-related images and receive AI-based visual observations.
 
@@ -78,21 +78,21 @@ User Uploads Image
    Vision Agent
         │
         ▼
-    AI Vision
+     AI Vision
         │
         ▼
-Visual Analysis
+ Visual Analysis
         │
         ▼
 Observations & Possible Concerns
         │
         ▼
-Recommended Actions
+ Recommended Actions
 ```
 
 ---
 
-## 💰 3. Construction Cost Estimator
+## 💰 3. Cost Estimator
 
 The Cost Estimator provides a preliminary construction budget based on user-provided project information.
 
@@ -125,24 +125,24 @@ Building Information
         └── Finish Quality
                 │
                 ▼
-       Built-up Area
+        Built-up Area
                 │
                 ▼
-       Cost Calculator
+        Cost Calculator
                 │
                 ▼
-      Cost Breakdown
+        Cost Breakdown
                 │
                 ▼
-         Contingency
+           Contingency
                 │
                 ▼
-      Estimated Budget
+        Estimated Budget
 ```
 
 ---
 
-## 🔎 4. Construction Market Search
+## 🔎 4. Market Search
 
 The Market Search feature helps users find current online information about construction materials.
 
@@ -192,7 +192,7 @@ Final Market Response
 
 ---
 
-## 🤖 5. General Construction Assistant
+## 🤖 5. General Assistant
 
 BuildWise-AI can answer general construction and civil engineering questions.
 
@@ -315,23 +315,23 @@ BuildWise-AI-/
 │   │   ├── router_agent.py
 │   │   ├── search_agent.py
 │   │   └── vision_agent.py
-│   │
+│
 │   ├── database/
 │   │   └── chroma_db/
-│   │
+│
 │   ├── prompts/
 │   │   └── construction_prompts.py
-│   │
+│
 │   ├── retrieval/
 │   │   ├── doc_loader.py
 │   │   └── ocr.py
-│   │
+│
 │   ├── tools/
 │   │   ├── cost_calculator.py
 │   │   ├── market_search.py
 │   │   ├── rag_tool.py
 │   │   └── vision_inspector.py
-│   │
+│
 │   ├── config.py
 │   ├── main.py
 │   └── test_router.py
@@ -392,16 +392,16 @@ Agent          Agent          Agent          Agent
 Groq         RAG / OCR      Groq Vision    Cost Tool
                  │
                  ▼
-              ChromaDB
+               ChromaDB
 
-                         Search Agent
+                          Search Agent
                               │
                               ▼
                             Tavily
 
   └──────────────────────┬──────────────────────┘
                          ▼
-                  Final Response
+                   Final Response
                          │
                          ▼
                   Streamlit Frontend
@@ -604,14 +604,13 @@ Create a `.env` file in the project root.
 
 Example:
 
-```env
 GROQ_API_KEY=your_groq_api_key
 TAVILY_API_KEY=your_tavily_api_key
 
-LANGCHAIN_API_KEY=your_langsmith_api_key
-LANGCHAIN_TRACING_V2=true
-LANGCHAIN_PROJECT=BuildWise-AI
-```
+LANGSMITH_API_KEY=your_langsmith_api_key
+LANGSMITH_TRACING=true
+LANGSMITH_ENDPOINT=https://api.smith.langchain.com
+LANGSMITH_PROJECT=BuildWise-AI
 
 ### Environment Variable Description
 
@@ -705,10 +704,10 @@ Screenshots can be added here to demonstrate the application's main interface an
 Suggested screenshots:
 
 * Main BuildWise-AI interface
-* Document & Blueprint Analyzer
-* Visual Building Inspector
+* Document Analyzer
+* Visual Inspector
 * Cost Estimator
-* Construction Market Search
+* Market Search
 
 > The complete application and feature demonstrations are also presented in the project's demonstration video.
 
