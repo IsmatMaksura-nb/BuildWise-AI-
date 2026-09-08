@@ -9,10 +9,32 @@ class Settings:
     # =========================
     # GROQ
     # =========================
-    GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
+    GROQ_API_KEY = os.getenv(
+        "GROQ_API_KEY",
+        ""
+    )
+
     GROQ_MODEL = os.getenv(
         "GROQ_MODEL",
-        "llama-3.3-70b-versatile"
+        "openai/gpt-oss-20b"
+    )
+
+    GROQ_VISION_MODEL = os.getenv(
+        "GROQ_VISION_MODEL",
+        "qwen/qwen3.6-27b"
+    )
+
+    # =========================
+    # GEMINI
+    # =========================
+    GEMINI_API_KEY = os.getenv(
+        "GEMINI_API_KEY",
+        ""
+    )
+
+    GEMINI_SEARCH_MODEL = os.getenv(
+        "GEMINI_SEARCH_MODEL",
+        "gemini-3.5-flash-lite"
     )
 
     # =========================
