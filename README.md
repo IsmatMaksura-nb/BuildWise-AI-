@@ -147,14 +147,14 @@ The Router Agent determines which specialized agent should handle the user's req
 
 ### AI Agents
 
-| Agent              | Responsibility                                  |
-| ------------------ | ----------------------------------------------- |
-| Construction Agent | General construction assistance and supervision |
-| Router Agent       | Determines the appropriate specialized agent    |
-| Document Agent     | Construction document and blueprint analysis    |
-| Vision Agent       | Construction image inspection                   |
-| Cost Agent         | Preliminary construction cost estimation        |
-| Search Agent       | Internet-based construction market search       |
+| Agent              | Responsibility                               |
+| ------------------ | -------------------------------------------- |
+| Construction Agent | General construction assistance              |
+| Router Agent       | Determines the appropriate specialized agent |
+| Document Agent     | Construction document and blueprint analysis |
+| Vision Agent       | Construction image inspection                |
+| Cost Agent         | Preliminary construction cost estimation     |
+| Search Agent       | Internet-based construction market search    |
 
 Each agent has a specific responsibility instead of using multiple agents without a meaningful purpose.
 
@@ -204,11 +204,12 @@ Each agent has a specific responsibility instead of using multiple agents withou
 
 # 📁 Project Structure
 
-```text
+```text id="e3zdtl"
 BuildWise-AI-/
 │
 ├── backend/
 │   ├── agents/
+│   │   ├── __init__.py
 │   │   ├── construction_agent.py
 │   │   ├── cost_agent.py
 │   │   ├── doc_agent.py
@@ -218,7 +219,8 @@ BuildWise-AI-/
 │   │
 │   ├── database/
 │   │   ├── __init__.py
-│   │   └── chroma_db/
+│   │   ├── chroma_db/
+│   │   └── ocr_cache/
 │   │
 │   ├── prompts/
 │   │   ├── __init__.py
@@ -242,7 +244,9 @@ BuildWise-AI-/
 │
 ├── frontend/
 │   ├── assets/
-│   └── app.py
+│   │   └── building.jpg
+│   ├── app.py
+│   └── chat_history.json
 │
 ├── .env.example
 ├── .gitignore
@@ -250,13 +254,13 @@ BuildWise-AI-/
 └── requirements.txt
 ```
 
-The `chroma_db/` directory contains the local persistent vector database and is excluded from GitHub through `.gitignore`.
+The `chroma_db/` directory contains the local persistent vector database and the `ocr_cache/` directory stores cached OCR-related data. These local data directories are excluded from GitHub through `.gitignore`.
 
 ---
 
 # 🔄 Overall Workflow
 
-```text
+```text id="egweqs"
 User Request
      ↓
 Streamlit Frontend
@@ -278,7 +282,7 @@ Different requests follow different workflows.
 
 ### General Question
 
-```text
+```text id="rhuz7h"
 User Question
      ↓
 Router Agent
@@ -292,7 +296,7 @@ Response
 
 ### Document Question
 
-```text
+```text id="5pzprl"
 Document Upload
      ↓
 PDF Text Extraction
@@ -316,7 +320,7 @@ Grounded Response
 
 ### Visual Inspection
 
-```text
+```text id="7xx0sz"
 Image Upload
      ↓
 Router Agent
@@ -332,7 +336,7 @@ Structured Response
 
 ### Cost Estimation
 
-```text
+```text id="1idn3z"
 Building Information
      ↓
 Router Agent
@@ -348,7 +352,7 @@ Final Estimate
 
 ### Market Search
 
-```text
+```text id="5y2nnf"
 Market Query
      ↓
 Router Agent
@@ -372,7 +376,7 @@ BuildWiseAI implements Retrieval-Augmented Generation for construction documents
 
 ### RAG Pipeline
 
-```text
+```text id="nj0nyt"
 PDF / Construction Document
           ↓
        PyMuPDF
@@ -500,7 +504,7 @@ This is mainly used for construction market information where current data is im
 
 ### Search Workflow
 
-```text
+```text id="qgmomr"
 User Query
      ↓
 Search Agent
@@ -566,7 +570,7 @@ Create a `.env` file in the project root.
 
 ### Example
 
-```text
+```text id="zav7co"
 GROQ_API_KEY=
 GROQ_MODEL=openai/gpt-oss-20b
 GROQ_VISION_MODEL=qwen/qwen3.6-27b
@@ -604,31 +608,31 @@ The `.env` file is included in `.gitignore`.
 
 ## Clone the Repository
 
-```text
+```text id="edy5u6"
 git clone https://github.com/IsmatMaksura-nb/BuildWise-AI-.git
 ```
 
 ## Move into the Project Directory
 
-```text
+```text id="bwnfp2"
 cd BuildWise-AI-
 ```
 
 ## Create a Virtual Environment
 
-```text
+```text id="xvc57b"
 python -m venv venv
 ```
 
 ## Activate the Virtual Environment on Windows
 
-```text
+```text id="wyrzzn"
 venv\Scripts\activate
 ```
 
 ## Install Dependencies
 
-```text
+```text id="c6s81h"
 pip install -r requirements.txt
 ```
 
@@ -642,13 +646,13 @@ Create the `.env` file and add the required API keys.
 
 From the project root:
 
-```text
+```text id="r97yuj"
 uvicorn backend.main:app --reload
 ```
 
 The FastAPI backend will run at:
 
-```text
+```text id="igbwf9"
 http://127.0.0.1:8000
 ```
 
@@ -656,7 +660,7 @@ http://127.0.0.1:8000
 
 Open another terminal and run:
 
-```text
+```text id="32jvjt"
 python -m streamlit run frontend/app.py
 ```
 
@@ -668,7 +672,7 @@ The Streamlit application will then open in the browser.
 
 The project includes a router test file:
 
-```text
+```text id="qf8cmi"
 backend/test_router.py
 ```
 
@@ -735,39 +739,74 @@ The main objectives of BuildWiseAI are to:
 **YouTube Demo:**
 https://youtu.be/JZd3dqFTaxQ
 
-The demonstration covers:
+The first part of the video demonstrates **BuildWiseAI from the user's perspective**.
 
-* General Assistant
-* Document Analyzer
-* Visual Inspector
-* Cost Estimator
-* Market Search
+It showcases the main implemented features of the application:
 
-## Part 2 — LangSmith Tracing
+* **General Assistant** — Answers general construction-related questions
+* **Document Analyzer** — Analyzes uploaded construction documents and floor plans
+* **Visual Inspector** — Analyzes uploaded building images
+* **Cost Estimator** — Provides estimated construction costs
+* **Market Search** — Searches for current construction material and market information
 
-Public LangSmith traces demonstrating the main BuildWiseAI workflows:
+The demonstration shows how users interact with these features through the Streamlit interface, including entering realistic queries and uploading documents or images where applicable.
 
-General:
-
-https://smith.langchain.com/public/28be6e2e-ccdd-45a7-b3ba-cf06c7c4392b/r/01a06c60-bc85-7443-9860-2369269241ef?start_time=2026-09-04T12%3A24%3A34.181599Z
-
-Document/RAG:
-
-https://smith.langchain.com/public/5749b3dc-af97-4dca-a68c-fb39c80d043a/r/01a06c66-0132-7291-bf00-30ecc829392d?start_time=2026-09-04T12%3A30%3A19.436108Z
-
-Visual:
-
-https://smith.langchain.com/public/b63d0791-3197-4dcb-9914-bb4e2fbce738/r/01a06c77-c013-7e80-b3ff-16271d11ad1a?start_time=2026-09-04T12%3A49%3A42.419789Z
-
-Cost:
-
-https://smith.langchain.com/public/7de4344f-45f0-4070-9e64-0f22c0df4981/r/01a06d6e-a121-7893-96d4-8ebd5e9377d6?start_time=2026-09-04T17%3A19%3A21.889985Z
-
-Market Search:
-
-https://smith.langchain.com/public/f0c15bdb-b985-41b7-a716-e2e420755c90/r/01a070b4-1b28-7ac0-bb30-8934b6564720?start_time=2026-09-05T08%3A34%3A06.760438Z
+The focus of this part is on the **working application features and their practical results**.
 
 ---
+
+## Part 2 — Codebase & Architecture Explanation
+
+After demonstrating the application, the video explains the **BuildWiseAI backend, frontend, architecture, and codebase**.
+
+The explanation covers:
+
+* **Project Architecture and Folder Structure**
+* **Streamlit Frontend**
+* **FastAPI Backend**
+* **Router Agent and Specialized Agents**
+* **Agent Workflow and Tool Execution**
+* **LLM and Model Configuration**
+* **Prompt Design**
+* **Cost Calculation**
+* **Internet/Market Search**
+* **OCR and Document Processing**
+* **RAG Pipeline**
+* **Embeddings**
+* **ChromaDB Vector Database**
+* **Visual Inspection Workflow**
+* **Important Functions and Their Roles**
+* **LangSmith Integration**
+* **Environment Variables and Configuration**
+
+The video walks through the major project components, including the `agents/`, `database/`, `prompts/`, `retrieval/`, and `tools/` folders, as well as important files such as `config.py`, `main.py`, `test_router.py`, `frontend/app.py`, and `README.md`.
+
+The overall system workflow is also explained:
+
+**User → Streamlit Frontend → FastAPI Backend → Router Agent → Selected Agent → Tool / RAG / OCR / Internet Search → Language Model → Final Answer → Frontend**
+
+Finally, the video explains how these components work together to provide construction-related assistance through a **multi-agent AI system**.
+
+---
+
+## Part 3 — LangSmith Tracing
+
+Public LangSmith traces demonstrating the main **BuildWiseAI workflows**:
+
+* **General Assistant:**
+  https://smith.langchain.com/public/28be6e2e-ccdd-45a7-b3ba-cf06c7c4392b/r/01a06c60-bc85-7443-9860-2369269241ef?start_time=2026-09-04T12%3A24%3A34.181599Z
+
+* **Document / RAG:**
+  https://smith.langchain.com/public/5749b3dc-af97-4dca-a68c-fb39c80d043a/r/01a06c66-0132-7291-bf00-30ecc829392d?start_time=2026-09-04T12%3A30%3A19.436108Z
+
+* **Visual Inspection:**
+  https://smith.langchain.com/public/b63d0791-3197-4dcb-9914-bb4e2fbce738/r/01a06c77-c013-7e80-b3ff-16271d11ad1a?start_time=2026-09-04T12%3A49%3A42.419789Z
+
+* **Cost Estimation:**
+  https://smith.langchain.com/public/7de4344f-45f0-4070-9e64-0f22c0df4981/r/01a06d6e-a121-7893-96d4-8ebd5e9377d6?start_time=2026-09-04T17%3A19%3A21.889985Z
+
+* **Market Search:**
+  https://smith.langchain.com/public/f0c15bdb-b985-41b7-a716-e2e420755c90/r/01a070b4-1b28-7ac0-bb30-8934b6564720?start_time=2026-09-05T08%3A34%3A06.760438Z
 
 # 👩‍💻 Developer
 
