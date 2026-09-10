@@ -40,7 +40,7 @@ The system is not intended to replace professional engineers, architects, quanti
 
 ## ✨ Features
 
- 1. 📄 Document Analyzer
+1. 📄 Document Analyzer
 
 Users can upload construction documents, drawings, blueprints, or PDFs and ask questions about their contents.
 
