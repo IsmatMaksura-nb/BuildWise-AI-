@@ -1,4 +1,4 @@
-# 🏗️ BuildWiseAI — AI-Powered Construction Assistant
+ 🏗️ BuildWiseAI — AI-Powered Construction Assistant
 
 BuildWiseAI is an AI-powered construction assistant designed to help users with common construction-related questions and tasks.
 
@@ -8,7 +8,7 @@ The system combines **AI agents, document analysis, OCR, RAG, ChromaDB, visual i
 
 ---
 
-## 🎯 Project Overview
+ 🎯 Project Overview
 
 Construction-related information is often distributed across drawings, documents, images, material information, cost data, and online sources.
 
@@ -24,7 +24,7 @@ The application uses specialized AI agents and tools depending on the user's req
 
 ---
 
-## 👥 Target Users
+👥 Target Users
 
 BuildWiseAI is designed for:
 
@@ -38,9 +38,9 @@ The system is not intended to replace professional engineers, architects, quanti
 
 ---
 
-# ✨ Features
+✨ Features
 
-## 1. 📄 Document Analyzer
+ 1. 📄 Document Analyzer
 
 Users can upload construction documents, drawings, blueprints, or PDFs and ask questions about their contents.
 
