@@ -14,11 +14,11 @@ Construction-related information is often distributed across drawings, documents
 
 BuildWiseAI provides a single interface where users can:
 
-- Ask general construction questions
-- Analyze construction documents and blueprints
-- Inspect construction images
-- Estimate preliminary construction costs
-- Search current construction material information
+* Ask general construction questions
+* Analyze construction documents and blueprints
+* Inspect construction images
+* Estimate preliminary construction costs
+* Search current construction material information
 
 The application uses specialized AI agents and tools depending on the user's request.
 
@@ -28,11 +28,11 @@ The application uses specialized AI agents and tools depending on the user's req
 
 BuildWiseAI is designed for:
 
-- Students learning construction and civil engineering concepts
-- Homeowners seeking preliminary construction information
-- People planning small construction projects
-- Users who need help understanding construction documents
-- Users who need preliminary cost or material information
+* Students learning construction and civil engineering concepts
+* Homeowners seeking preliminary construction information
+* People planning small construction projects
+* Users who need help understanding construction documents
+* Users who need preliminary cost or material information
 
 The system is not intended to replace professional engineers, architects, quantity surveyors, or contractors.
 
@@ -46,13 +46,13 @@ Users can upload construction documents, drawings, blueprints, or PDFs and ask q
 
 The system uses:
 
-- PyMuPDF for PDF text extraction
-- EasyOCR as an OCR fallback
-- Document chunking
-- HuggingFace embeddings
-- ChromaDB
-- Retrieval-Augmented Generation (RAG)
-- Groq LLM
+* PyMuPDF for PDF text extraction
+* EasyOCR as an OCR fallback
+* Document chunking
+* HuggingFace embeddings
+* ChromaDB
+* Retrieval-Augmented Generation (RAG)
+* Groq LLM
 
 ### Example
 
@@ -68,11 +68,11 @@ Users can upload construction images and ask questions about visible constructio
 
 The Visual Inspector can help identify:
 
-- Visible construction elements
-- Possible cracks or surface concerns
-- Dampness or visible damage
-- Masonry or concrete conditions
-- Other visible construction observations
+* Visible construction elements
+* Possible cracks or surface concerns
+* Dampness or visible damage
+* Masonry or concrete conditions
+* Other visible construction observations
 
 The system analyzes only the available visual evidence and avoids treating uncertain observations as confirmed structural defects.
 
@@ -82,21 +82,21 @@ The system analyzes only the available visual evidence and avoids treating uncer
 
 The Cost Estimator provides a preliminary construction cost estimate based on:
 
-- Building type
-- Total area
-- Number of floors
-- Finish quality
-- Additional notes
+* Building type
+* Total area
+* Number of floors
+* Finish quality
+* Additional notes
 
 The estimated cost is divided into major categories such as:
 
-- Foundation & Substructure
-- Brickwork, Masonry & Plastering
-- Plumbing
-- Electrical Work
-- Tiles, Painting & Finishing
-- Labor & Supervision
-- Contingency
+* Foundation & Substructure
+* Brickwork, Masonry & Plastering
+* Plumbing
+* Electrical Work
+* Tiles, Painting & Finishing
+* Labor & Supervision
+* Contingency
 
 All estimated costs are presented in BDT (৳).
 
@@ -110,10 +110,10 @@ The Market Search feature retrieves current construction-related information fro
 
 It can be used for queries such as:
 
-- Cement prices
-- Rod/steel prices
-- Construction material prices
-- Brand-specific material information
+* Cement prices
+* Rod/steel prices
+* Construction material prices
+* Brand-specific material information
 
 The application uses **Tavily** as its external web search and search-grounding mechanism.
 
@@ -129,11 +129,11 @@ The General Assistant handles common construction-related questions.
 
 ### Examples
 
-- What is the purpose of a foundation?
-- What are the common types of foundations?
-- What is RCC?
-- What is the purpose of reinforcement?
-- What is the difference between brickwork and concrete?
+* What is the purpose of a foundation?
+* What are the common types of foundations?
+* What is RCC?
+* What is the purpose of reinforcement?
+* What is the difference between brickwork and concrete?
 
 The assistant supports both **English and Bangla**.
 
@@ -147,14 +147,14 @@ The Router Agent determines which specialized agent should handle the user's req
 
 ### AI Agents
 
-| Agent | Responsibility |
-|---|---|
+| Agent              | Responsibility                                  |
+| ------------------ | ----------------------------------------------- |
 | Construction Agent | General construction assistance and supervision |
-| Router Agent | Determines the appropriate specialized agent |
-| Document Agent | Construction document and blueprint analysis |
-| Vision Agent | Construction image inspection |
-| Cost Agent | Preliminary construction cost estimation |
-| Search Agent | Internet-based construction market search |
+| Router Agent       | Determines the appropriate specialized agent    |
+| Document Agent     | Construction document and blueprint analysis    |
+| Vision Agent       | Construction image inspection                   |
+| Cost Agent         | Preliminary construction cost estimation        |
+| Search Agent       | Internet-based construction market search       |
 
 Each agent has a specific responsibility instead of using multiple agents without a meaningful purpose.
 
@@ -164,29 +164,29 @@ Each agent has a specific responsibility instead of using multiple agents withou
 
 ### Frontend
 
-- Streamlit
+* Streamlit
 
 ### Backend
 
-- FastAPI
-- Python
+* FastAPI
+* Python
 
 ### AI / LLM
 
-- Groq
-- `openai/gpt-oss-20b`
-- Groq Vision Model
+* Groq
+* `openai/gpt-oss-20b`
+* Groq Vision Model
 
 ### AI Framework
 
-- LangChain
+* LangChain
 
 ### Retrieval / RAG
 
-- PyMuPDF
-- EasyOCR
-- HuggingFace Sentence Transformers
-- ChromaDB
+* PyMuPDF
+* EasyOCR
+* HuggingFace Sentence Transformers
+* ChromaDB
 
 ### Embedding Model
 
@@ -194,11 +194,11 @@ Each agent has a specific responsibility instead of using multiple agents withou
 
 ### Internet Search
 
-- Tavily
+* Tavily
 
 ### Monitoring & Tracing
 
-- LangSmith
+* LangSmith
 
 ---
 
@@ -250,7 +250,7 @@ BuildWise-AI-/
 └── requirements.txt
 ```
 
-> The `chroma_db/` directory contains the local persistent vector database and is excluded from GitHub through `.gitignore`.
+The `chroma_db/` directory contains the local persistent vector database and is excluded from GitHub through `.gitignore`.
 
 ---
 
@@ -400,8 +400,8 @@ PDF / Construction Document
 
 The current RAG pipeline uses:
 
-- **Chunk size:** 1000 characters
-- **Chunk overlap:** 150 characters
+* **Chunk size:** 1000 characters
+* **Chunk overlap:** 150 characters
 
 ### Embeddings
 
@@ -435,10 +435,10 @@ This allows the system to work with both text-based and image-based construction
 
 The application also follows an anti-hallucination approach:
 
-- Document-specific answers are based on retrieved document context.
-- Missing information is not invented.
-- Uncertain OCR information is identified.
-- General construction guidance is separated from document facts.
+* Document-specific answers are based on retrieved document context.
+* Missing information is not invented.
+* Uncertain OCR information is identified.
+* General construction guidance is separated from document facts.
 
 For example, when a requested detail is unavailable:
 
@@ -452,10 +452,10 @@ The Visual Inspector uses a Groq vision model to analyze uploaded construction i
 
 The system focuses on visible evidence and reports:
 
-- Visible construction elements
-- Observed conditions
-- Possible concerns
-- Recommended next steps
+* Visible construction elements
+* Observed conditions
+* Possible concerns
+* Recommended next steps
 
 The system does not treat an image alone as sufficient evidence for confirming hidden structural conditions or structural capacity.
 
@@ -469,24 +469,24 @@ The Cost Estimator provides a preliminary planning estimate.
 
 The calculation considers:
 
-- Building type
-- Area
-- Number of floors
-- Finish quality
-- Additional notes
+* Building type
+* Area
+* Number of floors
+* Finish quality
+* Additional notes
 
 The Cost Agent works together with the cost calculation tool to generate an itemized estimate.
 
 ### Example Output Categories
 
-- Foundation & Structural Works
-- Brick Masonry & Plaster
-- Plumbing
-- Electrical
-- Tiles / Painting / Finishing
-- Labor / Site Supervision
-- Contingency
-- Total Estimated Cost
+* Foundation & Structural Works
+* Brick Masonry & Plaster
+* Plumbing
+* Electrical
+* Tiles / Painting / Finishing
+* Labor / Site Supervision
+* Contingency
+* Total Estimated Cost
 
 The result is presented as an estimate rather than an exact professional BOQ.
 
@@ -526,13 +526,13 @@ Important application workflows can be inspected through LangSmith.
 
 Tracing covers important parts of the system such as:
 
-- User requests
-- Agents
-- LLM execution
-- Tools
-- Retrieval
-- Search
-- Final response generation
+* User requests
+* Agents
+* LLM execution
+* Tools
+* Retrieval
+* Search
+* Final response generation
 
 ### Example Trace Categories
 
@@ -566,7 +566,7 @@ Create a `.env` file in the project root.
 
 ### Example
 
-```env
+```text
 GROQ_API_KEY=
 GROQ_MODEL=openai/gpt-oss-20b
 GROQ_VISION_MODEL=qwen/qwen3.6-27b
@@ -593,8 +593,8 @@ API keys and credentials must not be committed to GitHub.
 
 The project uses:
 
-- `.env` for local secrets
-- `.env.example` to show the required environment variables
+* `.env` for local secrets
+* `.env.example` to show the required environment variables
 
 The `.env` file is included in `.gitignore`.
 
@@ -604,31 +604,31 @@ The `.env` file is included in `.gitignore`.
 
 ## Clone the Repository
 
-```bash
+```text
 git clone https://github.com/IsmatMaksura-nb/BuildWise-AI-.git
 ```
 
 ## Move into the Project Directory
 
-```bash
+```text
 cd BuildWise-AI-
 ```
 
 ## Create a Virtual Environment
 
-```bash
+```text
 python -m venv venv
 ```
 
 ## Activate the Virtual Environment on Windows
 
-```bash
+```text
 venv\Scripts\activate
 ```
 
 ## Install Dependencies
 
-```bash
+```text
 pip install -r requirements.txt
 ```
 
@@ -642,7 +642,7 @@ Create the `.env` file and add the required API keys.
 
 From the project root:
 
-```bash
+```text
 uvicorn backend.main:app --reload
 ```
 
@@ -656,7 +656,7 @@ http://127.0.0.1:8000
 
 Open another terminal and run:
 
-```bash
+```text
 python -m streamlit run frontend/app.py
 ```
 
@@ -674,11 +674,11 @@ backend/test_router.py
 
 The router is tested with different feature types, including:
 
-- General
-- Document
-- Visual
-- Cost
-- Market
+* General
+* Document
+* Visual
+* Cost
+* Market
 
 The tests verify that requests are routed to the appropriate specialized agent.
 
@@ -690,22 +690,22 @@ BuildWiseAI is an AI-assisted construction information system.
 
 It should not be used as a replacement for:
 
-- Structural engineers
-- Architects
-- Quantity surveyors
-- Contractors
-- Building inspectors
-- Other qualified professionals
+* Structural engineers
+* Architects
+* Quantity surveyors
+* Contractors
+* Building inspectors
+* Other qualified professionals
 
 ### Important Limitations
 
-- Cost estimates are preliminary.
-- Market prices can change over time.
-- Image analysis is limited to visible evidence.
-- OCR may contain errors.
-- Uploaded documents may not contain all required information.
-- AI-generated responses may require professional verification.
-- Building-code and safety-critical decisions should be verified using appropriate professional and official sources.
+* Cost estimates are preliminary.
+* Market prices can change over time.
+* Image analysis is limited to visible evidence.
+* OCR may contain errors.
+* Uploaded documents may not contain all required information.
+* AI-generated responses may require professional verification.
+* Building-code and safety-critical decisions should be verified using appropriate professional and official sources.
 
 ---
 
@@ -713,51 +713,59 @@ It should not be used as a replacement for:
 
 The main objectives of BuildWiseAI are to:
 
-- Build a practical real-world AI application.
-- Demonstrate an agent-based architecture.
-- Integrate multiple specialized agents.
-- Implement RAG using construction documents.
-- Use a vector database for semantic retrieval.
-- Integrate OCR for scanned/image-based documents.
-- Provide construction image analysis.
-- Provide preliminary construction cost estimation.
-- Retrieve current market information through internet search.
-- Demonstrate search-grounded responses.
-- Monitor AI workflows using LangSmith.
-- Provide a useful and understandable construction assistant.
+* Build a practical real-world AI application.
+* Demonstrate an agent-based architecture.
+* Integrate multiple specialized agents.
+* Implement RAG using construction documents.
+* Use a vector database for semantic retrieval.
+* Integrate OCR for scanned/image-based documents.
+* Provide construction image analysis.
+* Provide preliminary construction cost estimation.
+* Retrieve current market information through internet search.
+* Demonstrate search-grounded responses.
+* Monitor AI workflows using LangSmith.
+* Provide a useful and understandable construction assistant.
 
 ---
 
 # 🎥 Project Demonstration
 
-The project demonstration includes:
+## Part 1 — Application Demonstration
 
-### Part 1 — Application Demonstration
+**YouTube Demo:**
+https://youtu.be/JZd3dqFTaxQ
 
-- General Assistant
-- Document Analyzer
-- Visual Inspector
-- Cost Estimator
-- Market Search
+The demonstration covers:
 
-### Part 2 — Codebase & Architecture Explanation
+* General Assistant
+* Document Analyzer
+* Visual Inspector
+* Cost Estimator
+* Market Search
 
-The backend explanation covers:
+## Part 2 — LangSmith Tracing
 
-- Agents
-- Router
-- Prompts
-- Tools
-- Retrieval
-- OCR
-- RAG
-- ChromaDB
-- Embeddings
-- LLM configuration
-- FastAPI
-- Streamlit
-- LangSmith tracing
-- Environment configuration
+Public LangSmith traces demonstrating the main BuildWiseAI workflows:
+
+General:
+
+https://smith.langchain.com/public/28be6e2e-ccdd-45a7-b3ba-cf06c7c4392b/r/01a06c60-bc85-7443-9860-2369269241ef?start_time=2026-09-04T12%3A24%3A34.181599Z
+
+Document/RAG:
+
+https://smith.langchain.com/public/5749b3dc-af97-4dca-a68c-fb39c80d043a/r/01a06c66-0132-7291-bf00-30ecc829392d?start_time=2026-09-04T12%3A30%3A19.436108Z
+
+Visual:
+
+https://smith.langchain.com/public/b63d0791-3197-4dcb-9914-bb4e2fbce738/r/01a06c77-c013-7e80-b3ff-16271d11ad1a?start_time=2026-09-04T12%3A49%3A42.419789Z
+
+Cost:
+
+https://smith.langchain.com/public/7de4344f-45f0-4070-9e64-0f22c0df4981/r/01a06d6e-a121-7893-96d4-8ebd5e9377d6?start_time=2026-09-04T17%3A19%3A21.889985Z
+
+Market Search:
+
+https://smith.langchain.com/public/f0c15bdb-b985-41b7-a716-e2e420755c90/r/01a070b4-1b28-7ac0-bb30-8934b6564720?start_time=2026-09-05T08%3A34%3A06.760438Z
 
 ---
 
