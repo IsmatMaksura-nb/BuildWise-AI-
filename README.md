@@ -1,4 +1,4 @@
-### 🏗️ BuildWiseAI — AI-Powered Construction Assistant
+# 🏗️ BuildWiseAI — AI-Powered Construction Assistant
 
 BuildWiseAI is an AI-powered construction assistant designed to help users with common construction-related questions and tasks.
 
