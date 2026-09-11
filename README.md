@@ -732,82 +732,72 @@ The main objectives of BuildWiseAI are to:
 
 ---
 
-# 🎥 Project Demonstration
+## 🎥 Project Demonstration
 
-## Part 1 — Application Demonstration
+### Part 1 — Application Demonstration & Codebase Explanation
 
-**YouTube Demo:**
-https://youtu.be/JZd3dqFTaxQ
+**YouTube Demo:** [https://youtu.be/JZd3dqFTaxQ](https://youtu.be/JZd3dqFTaxQ)
 
-The first part of the video demonstrates **BuildWiseAI from the user's perspective**.
+The video first demonstrates BuildWiseAI from the user's perspective and then explains the backend, architecture, and codebase of the application.
 
-It showcases the main implemented features of the application:
+#### Application Demonstration
 
-* **General Assistant** — Answers general construction-related questions
-* **Document Analyzer** — Analyzes uploaded construction documents and floor plans
-* **Visual Inspector** — Analyzes uploaded building images
-* **Cost Estimator** — Provides estimated construction costs
-* **Market Search** — Searches for current construction material and market information
+The demonstration covers the main implemented features:
 
-The demonstration shows how users interact with these features through the Streamlit interface, including entering realistic queries and uploading documents or images where applicable.
+- **General Assistant** — Answers general construction-related questions
+- **Document Analyzer** — Analyzes uploaded construction documents and floor plans
+- **Visual Inspector** — Analyzes uploaded building images
+- **Cost Estimator** — Provides preliminary construction cost estimates
+- **Market Search** — Searches for current construction material and market information
 
-The focus of this part is on the **working application features and their practical results**.
+The demonstration shows how users interact with these features through the Streamlit interface, including realistic queries and document or image uploads where applicable.
 
----
+#### Backend & Codebase Explanation
 
-## Part 2 — Codebase & Architecture Explanation
+After demonstrating the application, the video explains how the system is implemented, including:
 
-After demonstrating the application, the video explains the **BuildWiseAI backend, frontend, architecture, and codebase**.
-
-The explanation covers:
-
-* **Project Architecture and Folder Structure**
-* **Streamlit Frontend**
-* **FastAPI Backend**
-* **Router Agent and Specialized Agents**
-* **Agent Workflow and Tool Execution**
-* **LLM and Model Configuration**
-* **Prompt Design**
-* **Cost Calculation**
-* **Internet/Market Search**
-* **OCR and Document Processing**
-* **RAG Pipeline**
-* **Embeddings**
-* **ChromaDB Vector Database**
-* **Visual Inspection Workflow**
-* **Important Functions and Their Roles**
-* **LangSmith Integration**
-* **Environment Variables and Configuration**
-
-The video walks through the major project components, including the `agents/`, `database/`, `prompts/`, `retrieval/`, and `tools/` folders, as well as important files such as `config.py`, `main.py`, `test_router.py`, `frontend/app.py`, and `README.md`.
+- Project architecture and folder structure
+- Streamlit frontend
+- FastAPI backend
+- Router Agent and specialized agents
+- Agent workflow and tool execution
+- LLM and model configuration
+- Prompt design
+- Cost calculation
+- Internet/market search
+- OCR and document processing
+- RAG pipeline
+- HuggingFace embeddings
+- ChromaDB vector database
+- Visual inspection workflow
+- Important functions and their roles
+- LangSmith integration
+- Environment variables and configuration
 
 The overall system workflow is also explained:
 
-**User → Streamlit Frontend → FastAPI Backend → Router Agent → Selected Agent → Tool / RAG / OCR / Internet Search → Language Model → Final Answer → Frontend**
+**User → Streamlit Frontend → FastAPI Backend → Router Agent → Selected Agent → Tool / RAG / OCR / Internet Search → Language Model → Final Answer**
 
-Finally, the video explains how these components work together to provide construction-related assistance through a **multi-agent AI system**.
+The video focuses on both the working application and how the major backend components work together to provide construction-related assistance.
 
----
+### Part 2 — LangSmith Tracing
 
-## Part 3 — LangSmith Tracing
+Public LangSmith traces demonstrating the main BuildWiseAI workflows:
 
-Public LangSmith traces demonstrating the main **BuildWiseAI workflows**:
+**General Assistant:**  
+https://smith.langchain.com/public/28be6e2e-ccdd-45a7-b3ba-cf06c7c4392b/r/01a06c60-bc85-7443-9860-2369269241ef?start_time=2026-09-04T12%3A24%3A34.181599Z
 
-* **General Assistant:**
-  https://smith.langchain.com/public/7b53fb4a-0c3c-4e94-af48-4677d0509db0/r/01a08c8f-29e1-7e53-8629-0e26ee07e3f2?start_time=2026-09-10T18%3A23%3A07.745294Z
-  
-* **Document / RAG:**
-  https://smith.langchain.com/public/5749b3dc-af97-4dca-a68c-fb39c80d043a/r/01a06c66-0132-7291-bf00-30ecc829392d?start_time=2026-09-04T12%3A30%3A19.436108Z
+**Document / RAG:**  
+https://smith.langchain.com/public/5749b3dc-af97-4dca-a68c-fb39c80d043a/r/01a06c66-0132-7291-bf00-30ecc829392d?start_time=2026-09-04T12%3A30%3A19.436108Z
 
-* **Visual Inspection:**
-  https://smith.langchain.com/public/b63d0791-3197-4dcb-9914-bb4e2fbce738/r/01a06c77-c013-7e80-b3ff-16271d11ad1a?start_time=2026-09-04T12%3A49%3A42.419789Z
+**Visual Inspection:**  
+https://smith.langchain.com/public/b63d0791-3197-4dcb-9914-bb4e2fbce738/r/01a06c77-c013-7e80-b3ff-16271d11ad1a?start_time=2026-09-04T12%3A49%3A42.419789Z
 
-* **Cost Estimation:**
-  https://smith.langchain.com/public/7de4344f-45f0-4070-9e64-0f22c0df4981/r/01a06d6e-a121-7893-96d4-8ebd5e9377d6?start_time=2026-09-04T17%3A19%3A21.889985Z
+**Cost Estimation:**  
+https://smith.langchain.com/public/7de4344f-45f0-4070-9e64-0f22c0df4981/r/01a06d6e-a121-7893-96d4-8ebd5e9377d6?start_time=2026-09-04T17%3A19%3A21.889985Z
 
-* **Market Search:**
-  https://smith.langchain.com/public/f0c15bdb-b985-41b7-a716-e2e420755c90/r/01a070b4-1b28-7ac0-bb30-8934b6564720?start_time=2026-09-05T08%3A34%3A06.760438Z
-
+**Market Search:**  
+https://smith.langchain.com/public/f0c15bdb-b985-41b7-a716-e2e420755c90/r/01a070b4-1b28-7ac0-bb30-8934b6564720?start_time=2026-09-05T08%3A34%3A06.760438Z
 # 👩‍💻 Developer
 
 **Ismat Maksura**
