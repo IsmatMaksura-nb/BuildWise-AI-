@@ -785,8 +785,7 @@ The video focuses on both the working application and how the major backend comp
 Public LangSmith traces demonstrating the main BuildWiseAI workflows:
 
 **General Assistant:**  
-https://smith.langchain.com/public/28be6e2e-ccdd-45a7-b3ba-cf06c7c4392b/r/01a06c60-bc85-7443-9860-2369269241ef?start_time=2026-09-04T12%3A24%3A34.181599Z
-
+https://smith.langchain.com/public/7b53fb4a-0c3c-4e94-af48-4677d0509db0/r/01a08c8f-29e1-7e53-8629-0e26ee07e3f2?start_time=2026-09-10T18%3A23%3A07.745294Z
 **Document / RAG:**  
 https://smith.langchain.com/public/5749b3dc-af97-4dca-a68c-fb39c80d043a/r/01a06c66-0132-7291-bf00-30ecc829392d?start_time=2026-09-04T12%3A30%3A19.436108Z
 
